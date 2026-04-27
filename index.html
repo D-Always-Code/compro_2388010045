@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Solusi Teknologi Profesional - Company Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 100px 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Tentang Section */
+        #about {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        #services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Keunggulan Section */
+        #features {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item h3 {
+            color: #764ba2;
+            margin: 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Doni Setiawan 2388010045</a>
+            <ul>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#features">Keunggulan</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Solusi Teknologi Terdepan</h1>
+        <p>Kami menyediakan layanan teknologi profesional untuk mengembangkan bisnis Anda ke level selanjutnya</p>
+        <a href="#contact" class="cta-button">Hubungi Kami</a>
+    </div>
+
+    <!-- Tentang Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p class="section-subtitle">Membangun Kepercayaan Melalui Teknologi dan Inovasi</p>
+            
+            <div class="about-content">
+                <div>
+                    <p>PT SolusiTech adalah perusahaan teknologi terkemuka yang berkomitmen untuk memberikan solusi digital terbaik bagi klien kami. Dengan tim profesional yang berpengalaman lebih dari 10 tahun, kami telah membantu ratusan perusahaan mencapai transformasi digital mereka.</p>
+                    <p>Kami percaya bahwa teknologi adalah kunci untuk pertumbuhan bisnis modern. Oleh karena itu, kami terus berinovasi dan mengembangkan solusi yang dapat disesuaikan dengan kebutuhan spesifik setiap klien.</p>
+                    <p><span class="highlight">Misi kami:</span> Menghadirkan solusi teknologi yang efisien, inovatif, dan berkelanjutan untuk membantu bisnis Anda berkembang pesat.</p>
+                </div>
+                <div>
+                    <p><span class="highlight">Visi kami:</span> Menjadi mitra terpercaya dalam transformasi digital di Asia Tenggara.</p>
+                    <p><strong>Nilai-Nilai Kami:</strong></p>
+                    <p>✓ Integritas dan Transparansi<br>
+                    ✓ Inovasi Berkelanjutan<br>
+                    ✓ Kepuasan Klien Utama<br>
+                    ✓ Tim yang Profesional<br>
+                    ✓ Komitmen pada Kualitas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+            <p class="section-subtitle">Solusi Komprehensif untuk Kebutuhan Digital Anda</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Pengembangan Web</h3>
+                    <p>Kami mengembangkan website yang responsif, cepat, dan user-friendly dengan teknologi terkini untuk meningkatkan kehadiran digital Anda.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Aplikasi Mobile</h3>
+                    <p>Pembuatan aplikasi mobile native dan cross-platform yang memberikan pengalaman pengguna terbaik di iOS dan Android.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Cloud Solutions</h3>
+                    <p>Layanan cloud infrastructure dan management untuk memastikan bisnis Anda berjalan dengan aman, scalable, dan efisien.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Konsultasi IT</h3>
+                    <p>Tim ahli kami siap memberikan konsultasi strategis untuk optimalisasi infrastruktur IT dan transformasi digital perusahaan Anda.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Data Analytics</h3>
+                    <p>Mengubah data Anda menjadi insight berharga dengan analytics dan business intelligence solutions yang canggih.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Cybersecurity</h3>
+                    <p>Proteksi data dan sistem Anda dengan solusi keamanan cyber terpadu yang mengikuti standar internasional terbaru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="features">
+        <div class="container">
+            <h2>Keunggulan Kompetitif Kami</h2>
+            <p class="section-subtitle">Mengapa Memilih PT SolusiTech?</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>📈 Pertumbuhan Bisnis</h3>
+                    <p>Solusi kami dirancang untuk meningkatkan efisiensi operasional dan ROI bisnis Anda secara signifikan.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>🛡️ Keamanan Terjamin</h3>
+                    <p>Standar keamanan internasional dengan enkripsi tingkat enterprise untuk melindungi aset digital Anda.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>⚡ Performa Tinggi</h3>
+                    <p>Teknologi terkini memastikan aplikasi dan sistem Anda berjalan dengan performa optimal 24/7.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>🤝 Support 24/7</h3>
+                    <p>Tim support profesional kami siap membantu Anda kapan saja untuk memastikan kontinuitas bisnis.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>📱 Multi-Platform</h3>
+                    <p>Solusi kami kompatibel dengan berbagai platform untuk jangkauan dan aksesibilitas maksimal.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>💰 Cost Effective</h3>
+                    <p>Paket harga yang kompetitif dengan ROI yang jelas dan transparent tanpa hidden cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio Proyek</h2>
+            <p class="section-subtitle">Proyek-Proyek Sukses yang Telah Kami Selesaikan</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    E-Commerce Platform<br><small>Untuk Brand Fashion Terkemuka</small>
+                </div>
+                <div class="portfolio-item">
+                    Mobile App Banking<br><small>Aplikasi Financial Management</small>
+                </div>
+                <div class="portfolio-item">
+                    Enterprise CRM<br><small>Untuk Perusahaan Manufaktur</small>
+                </div>
+                <div class="portfolio-item">
+                    Cloud Migration<br><small>Transformasi Digital Perusahaan</small>
+                </div>
+                <div class="portfolio-item">
+                    Analytics Dashboard<br><small>Big Data Processing</small>
+                </div>
+                <div class="portfolio-item">
+                    IoT Solution<br><small>Smart Building System</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p class="section-subtitle">Mari Kita Wujudkan Visi Digital Anda Bersama</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📍 Alamat</h3>
+                    <p>Jakarta Selatan, Indonesia</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📞 Telepon</h3>
+                    <p>+62 21 XXXX XXXX</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>hello@solutitech.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>🌐 Website</h3>
+                    <p>www.solutitech.com</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="mailto:hello@solutitech.com" class="cta-button" style="background: white; color: #667eea;">Kirim Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PT SolusiTech. Semua hak dilindungi undang-undang. | Dikembangkan dengan dedikasi untuk kesuksesan bisnis Anda.</p>
+        </div>
+    </footer>
+</body>
+</html>
