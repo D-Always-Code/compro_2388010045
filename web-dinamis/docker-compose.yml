@@ -9,7 +9,7 @@ services:
       MARIADB_PASSWORD: Setiawan5525!
     volumes:
       - db_data:/var/lib/mysql
-      - ./db_data:/dbcompro.sql:/docker-entrypoint-initdb.d/dbcompro.sql:ro
+      - ./db_data/dbcompro.sql:/docker-entrypoint-initdb.d/dbcompro.sql:ro
     restart: always
 
   container-statis:
