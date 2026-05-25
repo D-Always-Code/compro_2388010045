@@ -36,6 +36,7 @@ jobs:
         key: ${{ secrets.AWS_PRIVATE_KEY }}
         port: 22
         script: |
-          docker rm -f compro_2388010045 || true
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/compro_2388010045:latest
-          docker run -d --name compro_2388010045 -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/compro_2388010045:latest
+          /compro_2388010045:latest
+          docker compose -f docker-compose.yml down
+          docker compose -f docker-compose.yml pull
+          docker compose -f docker-compose.yml up -d
