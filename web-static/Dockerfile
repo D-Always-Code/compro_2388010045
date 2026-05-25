@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 #Kita copy file index.html ke dalam folder html di nginx
-COPY web-static/ /usr/share/nginx/html
+COPY . /usr/share/nginx/html
 
 #kita expose port 80 untuk mengakses web server nginx
 EXPOSE 80
