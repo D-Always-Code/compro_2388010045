@@ -20,7 +20,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: ./web-static
-        dockerfile: ./Dockerfile
+        dockerfile: ./web-static/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/compro_2388010045:latest
 
