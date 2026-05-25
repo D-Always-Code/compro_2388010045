@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'web-static/**'
+      - 'web-statis/**'
       - '.github/workflows/deploy.yaml'
 jobs:
   build-and-deploy:
@@ -19,8 +19,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ./web-static
-        dockerfile: ./web-static/Dockerfile
+        context: ./web-statis
+        dockerfile: ./web-statis/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/compro_2388010045:latest
 
