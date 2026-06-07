@@ -15,7 +15,7 @@ services:
   container-statis:
     image: donisetiawan25/web-dinamis:latest
     ports:
-      - "80:80"
+      - "8080:80"
     restart: always
 
   container-dinamis:

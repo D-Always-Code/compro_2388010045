@@ -32,7 +32,8 @@ jobs:
         key: ${{ secrets.AWS_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /home/ubuntu 
-          docker compose -f docker-compose.yml down
-          docker compose -f docker-compose.yml pull
-          docker compose -f docker-compose.yml up -d
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/compro_2388010045:latest
+          docker ps -q --filter "publish=80" | xargs -r docker stop || true
+          docker ps -a -q --filter "publish=80" | xargs -r docker rm || true
+          docker rm -f web-static || true
+          docker run -d --name web-static -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/compro_2388010045:latest
